@@ -13,6 +13,7 @@ const FormWrapper = ({ title, children }: FormWrapperProps) => {
           textAlign: "center",
           margin: 0,
           marginBottom: "2rem",
+          color: "#f48225",
         }}
       >
         {title}

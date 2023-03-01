@@ -54,43 +54,36 @@ function App() {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        position: "relative",
+        background: "#393939",
+        border: "1px solid #404245",
+        color: "#c4c8cc",
+        padding: "2rem",
+        borderRadius: "0.5rem",
+        maxWidth: "600px",
       }}
     >
-      <div
-        style={{
-          position: "relative",
-          background: "white",
-          border: "1px solid black",
-          padding: "2rem",
-          borderRadius: "0.5rem",
-          maxWidth: "600px",
-        }}
-      >
-        <form onSubmit={onSubmit}>
-          <div style={{ position: "absolute", top: "0.5rem", right: "0.5rem" }}>
-            {currentStepIndex + 1} / {steps.length}
-          </div>
-          {step}
-          <div
-            style={{
-              marginTop: "1rem",
-              display: "flex",
-              gap: "0.5rem",
-              justifyContent: "flex-end",
-            }}
-          >
-            {!isFirstStep && (
-              <button type="button" onClick={back}>
-                Back
-              </button>
-            )}
-            <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
-          </div>
-        </form>
-      </div>
+      <form onSubmit={onSubmit}>
+        <div style={{ position: "absolute", top: "0.5rem", right: "0.5rem" }}>
+          {currentStepIndex + 1} / {steps.length}
+        </div>
+        {step}
+        <div
+          style={{
+            marginTop: "1rem",
+            display: "flex",
+            gap: "0.5rem",
+            justifyContent: "flex-end",
+          }}
+        >
+          {!isFirstStep && (
+            <button type="button" onClick={back}>
+              Back
+            </button>
+          )}
+          <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
+        </div>
+      </form>
     </div>
   );
 }
